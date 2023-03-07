@@ -1,69 +1,60 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap");
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+* {
   margin: 0;
+  padding: 0;
+  /*outline: 1px solid limegreen !important;*/
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+#headerContainer {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.06);
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  height: 5rem;
+  justify-content: space-around;
+  margin-top: 2.5rem;
+  width: 100%;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+#searchBar {
+  border-radius: 0.825rem;
+  border: 2px solid rgba(217, 217, 217, 0.76);
+  height: 3.11rem;
+  width: 21.745rem;
+  padding: 1.5rem;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+#searchBar::placeholder {
+  color: rgba(67, 60, 62, 0.5);
+  font-family: var(--font-family);
+  font-size: 16px;
+  padding: 0% 6% 0% 6%;
+}
+
+#btnUser {
+  border-radius: 0.625rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 1);
+  font-family: var(--font-family);
+  font-size: 20px;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  height: 2.869rem;
+  width: 7rem;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+#btnCart {
+  border-radius: 0.625rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 1);
+  font-family: var(--font-family);
+  font-size: 20px;
+  font-weight: 500;
+  height: 2.869rem;
+  width: 7rem;
 }
