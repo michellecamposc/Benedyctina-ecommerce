@@ -8,11 +8,11 @@ const App = () => {
   return (
     <div>
       <h1>Lista de Productos</h1>
-      <h2>{categorySelected}</h2>
       <CategoriesList
         categorySelected={categorySelected}
         setCategorySelected={setCategorySelected}
       />
+      {categorySelected !== "" && <h2>Categoría: {categorySelected}</h2>}
       <ProductsList categorySelected={categorySelected} />
     </div>
   );
