@@ -1,21 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const CategoriesList = () => {
+const CategoriesList = ({ categorySelected, setCategorySelected }) => {
   const [category, setCategory] = useState([]);
 
-  async function fetchData() {
-    const response = await fetch("https://dummyjson.com/products/categories");
-    const data = await response.json();
-    setCategory(data);
-  }
-  fetchData();
-
+  const handleSelect = (e) => {
+    setCategorySelected(e.target.value);
+  };
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch("https://dummyjson.com/products/categories");
+      const data = await response.json();
+      setCategory(data);
+    }
+    fetchData();
+  }, []);
   return (
-    <select>
-      <option value={-1}>Seleccione Categoria</option>
-      {category.map((option) => {
+    <select onChange={handleSelect}>
+      <option key={-1} value={""}>
+        Seleccione Categoria
+      </option>
+      {category.map((option, index) => {
         return (
-          <option key={option.id} value="option">
+          <option key={index} value={option}>
             {" "}
             {option}
           </option>
