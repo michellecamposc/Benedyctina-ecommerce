@@ -5,24 +5,23 @@ const ProductsList = ({ categorySelected }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    async function fetchData() {
+    const fetchProducts = async () => {
       const baseURL = "https://dummyjson.com";
-      let productsURL = `${baseURL}/products`;
-      if (categorySelected !== "") {
-        productsURL = `${productsURL}/category/${categorySelected}`;
-      }
-      const response = await fetch(productsURL);
-      const data = await response.json();
-      setProducts(data.products);
-    }
-    fetchData();
+      const productsURL =
+        categorySelected !== ""
+          ? `${baseURL}/products/category/${categorySelected}`
+          : `${baseURL}/products`;
+      const { products } = await fetch(productsURL).then((res) => res.json());
+      setProducts(products);
+    };
+    fetchProducts();
   }, [categorySelected]);
 
   return (
     <div>
-      {products.map((product) => {
-        return <Product key={product.id} product={product} />;
-      })}
+      {products.map((product) => (
+        <Product key={product.id} product={product} />
+      ))}
     </div>
   );
 };
