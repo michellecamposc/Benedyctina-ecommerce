@@ -85,14 +85,14 @@ const Navbar = () => {
           <IconContainer sx={{ marginLeft: 2 }}>
             <AccountCircleOutlinedIcon
               sx={{
-                color: "black",
-                width: 40,
-                height: 40,
+                color: "grey",
+                width: 38,
+                height: 38,
                 marginRight: 2,
               }}
             />
             <ShoppingCartOutlinedIcon
-              sx={{ color: "black", width: 40, height: 40, marginLeft: 2 }}
+              sx={{ color: "grey", width: 38, height: 38, marginLeft: 2 }}
             />
           </IconContainer>
         </Toolbar>
