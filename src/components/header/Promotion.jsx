@@ -37,7 +37,7 @@ const Promotion = () => {
       }}
     >
       <img
-        src="/public/promotion.png"
+        src="/promotion.png"
         alt="promotion"
         style={{ width: "100%", height: "auto" }}
       />
