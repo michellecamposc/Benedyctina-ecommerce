@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
 
-const CategoriesList = ({ categorySelected, setCategorySelected }) => {
+const CategoryList = ({ categorySelected, setCategorySelected }) => {
   const [category, setCategory] = useState([]);
 
-  const handleSelect = (e) => {
-    setCategorySelected(e.target.value);
-  };
   useEffect(() => {
+    // Fetch request
     async function fetchData() {
       const response = await fetch("https://dummyjson.com/products/categories");
       const data = await response.json();
@@ -14,10 +12,17 @@ const CategoriesList = ({ categorySelected, setCategorySelected }) => {
     }
     fetchData();
   }, []);
+
+  // Select category product
+  const handleSelect = (e) => {
+    setCategorySelected(e.target.value);
+  };
+
   return (
+    // Filter to select a category
     <select onChange={handleSelect}>
       <option key={-1} value={""}>
-        Seleccione Categoria
+        Filtrar producto
       </option>
       {category.map((option, index) => {
         return (
@@ -31,4 +36,4 @@ const CategoriesList = ({ categorySelected, setCategorySelected }) => {
   );
 };
 
-export default CategoriesList;
+export default CategoryList;

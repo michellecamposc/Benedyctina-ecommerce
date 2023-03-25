@@ -4,6 +4,7 @@ import { styled } from "@mui/material/styles";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import CategoryMenu from "./CategoryMenu";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -53,8 +54,8 @@ const Navbar = () => {
         sx={{
           bgcolor: "white",
           borderBottom: "1px solid grey",
-          height: 100,
-          paddingTop: "14px",
+          flexGrow: 1,
+          paddingTop: "30px",
           boxShadow: "none",
         }}
       >
@@ -75,7 +76,7 @@ const Navbar = () => {
             />
           </Search>
           <Typography
-            variant="h4"
+            variant="h3"
             component="h1"
             sx={{ color: "black", fontWeight: "bold" }}
           >
@@ -95,6 +96,16 @@ const Navbar = () => {
             />
           </IconContainer>
         </Toolbar>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            paddingTop: "20px",
+            paddingBottom: "10px",
+          }}
+        >
+          <CategoryMenu />
+        </Box>
       </AppBar>
     </Box>
   );

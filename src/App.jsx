@@ -1,17 +1,15 @@
 import { useState } from "react";
-import CategoriesList from "../src/components/products/CategoriesList";
+import CategoryList from "../src/components/products/CategoryList";
 import ProductsList from "../src/components/products/ProductsList";
 import Navbar from "./components/header/Navbar";
-
+import CategoryMenu from "./components/header/CategoryMenu";
 const App = () => {
   const [categorySelected, setCategorySelected] = useState("");
 
   return (
     <div>
-      <Navbar></Navbar>
-      <h1>Lista de Productos</h1>
-
-      <CategoriesList
+      <Navbar />
+      <CategoryList
         categorySelected={categorySelected}
         setCategorySelected={setCategorySelected}
       />
